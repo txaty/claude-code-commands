@@ -13,11 +13,61 @@ Review the currently staged changes and create a git commit with ONLY the staged
 
 Requirements:
 - Do NOT stage additional files — only commit what is already staged
-- Write a clear, concise commit message following conventional commit format when appropriate
-- First line: imperative mood, under 50 characters, no period
-- If needed, add a blank line then a detailed body (wrap at 72 characters)
-- Focus on WHAT changed and WHY, not HOW
-- Use `git commit -m` for simple commits or `git commit` with a heredoc for complex ones
+- Write commit messages following Conventional Commits specification (https://www.conventionalcommits.org/)
+
+Commit Message Format:
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Type (REQUIRED):
+- `feat`: new feature for the user (correlates with MINOR in SemVer)
+- `fix`: bug fix for the user (correlates with PATCH in SemVer)
+- `docs`: documentation only changes
+- `style`: formatting, missing semi colons, etc; no code change
+- `refactor`: refactoring production code
+- `perf`: performance improvements
+- `test`: adding tests, refactoring tests; no production code change
+- `build`: changes to build system or external dependencies
+- `ci`: changes to CI configuration files and scripts
+- `chore`: updating grunt tasks etc; no production code change
+
+Scope (OPTIONAL):
+- A noun describing a section of the codebase in parentheses, e.g., `feat(parser):`
+
+Description:
+- MUST immediately follow the colon and space after type/scope
+- Use imperative mood (e.g., "add" not "added" or "adds")
+- No period at the end
+- Under 50 characters
+
+Body (OPTIONAL):
+- Add after a blank line following the description
+- Provide additional context about WHAT changed and WHY
+- Wrap at 72 characters
+
+Breaking Changes:
+- Add exclamation mark after type/scope to indicate breaking changes
+- OR add footer with text BREAKING CHANGE followed by description
+
+Examples:
+```
+feat(auth): add OAuth2 login support
+
+fix: prevent racing condition in user service
+
+docs: update installation instructions
+
+feat!: remove deprecated API endpoints
+
+BREAKING CHANGE: endpoints /v1/users removed
+```
+
+- Use `git commit -m` for simple commits or `git commit` with a heredoc for multi-line commits
 - After committing, output the commit hash and message for confirmation
 
 ABSOLUTELY FORBIDDEN — CO-AUTHOR / ATTRIBUTION:
