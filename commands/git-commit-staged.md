@@ -3,7 +3,7 @@ name: git-commit-staged
 description: Commit staged changes with a well-formatted commit message following git best practices
 ---
 
-You MUST use the Task tool with `subagent_type: "Bash"` and `model: "haiku"` to perform this entire task. Delegate ALL work below to that subagent. Do NOT run any git commands yourself.
+You MUST use the Task tool with `subagent_type: "general-purpose"` and `model: "haiku"` to perform this entire task. Delegate ALL work below to that subagent. Do NOT run any git commands yourself.
 
 Pass the following instructions to the subagent:
 

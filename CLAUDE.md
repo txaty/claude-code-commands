@@ -14,7 +14,7 @@ A collection of custom slash commands (`.md` files) for Claude Code, installed b
 
 Commands in this repo follow these conventions:
 
-- **Delegate to subagents**: Commands use the Task tool with `subagent_type: "Bash"` and `model: "haiku"` to perform work, keeping the main agent context clean.
+- **Delegate to subagents**: Commands use the Task tool with `subagent_type: "general-purpose"` and `model: "haiku"` to perform work, keeping the main agent context clean.
 - **Conventional commits**: Commit messages use conventional commit format, imperative mood, under 50 chars first line, body wrapped at 72 chars.
 - **No co-author tags**: Commands explicitly forbid `Co-Authored-By`, `Signed-off-by`, or any AI attribution trailers in commit messages.
 - **Safety constraints**: Commands restrict allowed git operations (no `push`, `--amend`, `--hard` reset, or destructive file ops).
